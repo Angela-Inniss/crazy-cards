@@ -1,0 +1,19 @@
+.c-input {
+  font-weight: bold;
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__input-field {
+    flex-grow: 1;
+    border: none;
+    background: #f7f1f1;
+    padding: 0 1.5em;
+    font-size: initial;
+    outline: none;
+    height: 35px;
+    border-radius: 3px;
+  }
+}

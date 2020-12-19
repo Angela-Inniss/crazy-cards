@@ -1,0 +1,45 @@
+.c-user-input-form {
+  &__name-fields,
+  &__box-two {
+    display: flex;
+  }
+  &__section-three {
+    border: 2px solid yellow;
+    display: inline-block;
+    margin-left: 20px;
+    min-width: 214px;
+  }
+  &__firstName,
+  &__surName,
+  &__age,
+  &__postcode {
+    margin: 20px;
+  }
+
+  &__earnings {
+    display: inline-block;
+    margin: 20px;
+  }
+  &__submit-btn {
+    width: 200px;
+    height: auto;
+    background-color: #f4ee21;
+    border-radius: 20px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+    margin: 20px;
+    color: #160e57;
+  }
+  margin: 4rem auto;
+  padding: 2rem 3rem 3rem;
+  max-width: 600px;
+  background: #160e57;
+  color: #fff;
+  box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+  overflow: hidden;
+  border-radius: 4px;
+}

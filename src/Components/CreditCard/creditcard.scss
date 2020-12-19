@@ -1,0 +1,15 @@
+.c-credit-card {
+  > div {
+    display: block;
+  }
+
+  &__card-selected {
+    border: 5px solid deeppink;
+    border-radius: 4px;
+  }
+
+  &__card {
+    border: 5px solid green;
+    border-radius: 4px;
+  }
+}
