@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+.prettierrc.json
+src/.prettierignore
+
 
 # testing
 /coverage
@@ -18,9 +21,15 @@
 .env.test.local
 .env.production.local
 .idea
-.prettierrc.json
 .babelrc
 .eslintcache
+.idea/.gitignore
+.idea/crazy-cards.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/modules.xml
+.prettierrc.json
+src/.prettierignore
 
 
 npm-debug.log*
