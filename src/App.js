@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-
+import bem from "./bem";
 import UserInputForm from "./Forms/UserInputForm";
 import CreditCard from "./Components/CreditCard/CreditCard";
-
+import "./App.scss";
 import { allCards } from "./cardData";
-
-import "./App.css";
 
 const Container = () => {
   const [cards, setCards] = useState([]);
@@ -57,6 +55,7 @@ const Container = () => {
 
     setCards(filtered);
   };
+  const baseClass = "c-app";
 
   return (
     <div className="Container">
@@ -65,26 +64,38 @@ const Container = () => {
         ({
           id,
           name,
+          number,
           apr,
           balanceTransfer,
           purchaseDuration,
           creditAvailable,
+          expiry,
         }) => (
           <CreditCard
             key={id}
             name={name}
+            number={number}
             apr={apr}
             balanceTransferDuration={balanceTransfer}
             purchaseOfferDuration={purchaseDuration}
             creditAvailable={creditAvailable}
+            expiry={expiry}
             onClickCard={() => handleSelectCard(id)}
             selected={selectedCards.includes(id)}
           />
         )
       )}
-
-      <button onClick={addUpCreditAvailable}>See credit available </button>
-      {total}
+      {selectedCards.length && (
+        <>
+          <button
+            className={bem(baseClass, "total-credit-btn")}
+            onClick={addUpCreditAvailable}
+          >
+            See credit available for selected catds{" "}
+          </button>
+          {selectedCards.length && <span> {total}</span>}
+        </>
+      )}
     </div>
   );
 };

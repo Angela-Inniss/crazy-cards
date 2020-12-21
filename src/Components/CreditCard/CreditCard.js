@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import bem from "../../bem";
+import Cards from "react-credit-cards";
+import "react-credit-cards/lib/styles.scss";
+import { ReactComponent as ChipIcon } from "../../Icons/chip.svg";
 
 import "./creditcard.scss";
+import CreditCardDetailsTable from "./CreditCardDetailsTable";
 
 type Props = {
   name: string,
@@ -11,43 +15,67 @@ type Props = {
   creditAvailable: number,
   onClickCard: (number) => void,
   selected: boolean,
+  number: string,
+  focus: string,
+  cvc: string,
+  expiry: string,
 };
 const CreditCard = ({
   name,
+  number,
   apr,
   balanceTransferDuration,
   purchaseOfferDuration,
   creditAvailable,
   onClickCard,
   selected,
+  expiry,
 }: Props) => {
   const baseClass = "c-credit-card";
   const [seeCardDetails, setSeeCardDetails] = useState(false);
   return (
-    <>
-      <div
-        onClick={onClickCard}
-        className={bem(baseClass, selected ? "card-selected" : "card")}
-      >
-        <div> {name}</div>
-        {seeCardDetails && (
-          <>
-            <div>{apr}</div>
-            <div>{balanceTransferDuration}</div>
-            <div> {purchaseOfferDuration}</div>
-            <div>{creditAvailable}</div>
-          </>
-        )}
+    <div className={baseClass}>
+      <div className={bem(baseClass, "container")}>
+        <div
+          onClick={onClickCard}
+          className={bem(baseClass, selected ? "card-selected" : "card")}
+        >
+          <div>
+            <ChipIcon />
+          </div>
+
+          <div className={bem(baseClass, "number")}>{number}</div>
+          <div className={bem(baseClass, "name-expiry-block")}>
+            <span className={bem(baseClass, "name")}>{name}</span>
+
+            <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
+          </div>
+        </div>
+        <div style={{ margin: "auto" }}>
+          <button
+            className={bem(baseClass, "see-details-btn")}
+            onClick={() => setSeeCardDetails(!seeCardDetails)}
+          >
+            See card details
+          </button>
+        </div>
+
+        <div style={{ margin: "auto" }}>
+          {seeCardDetails && (
+            <CreditCardDetailsTable
+              apr={apr}
+              balanceTransferDuration={balanceTransferDuration}
+              purchaseDuration={purchaseOfferDuration}
+              creditAvailable={creditAvailable}
+            />
+          )}
+        </div>
       </div>
-      <button onClick={() => setSeeCardDetails(!seeCardDetails)}>
-        See card details
-      </button>
-    </>
+    </div>
   );
 };
 
 export default CreditCard;
-
 
 // Notes:
 // need to add onclick to this card, and when the user clicks it need to display the details of the card

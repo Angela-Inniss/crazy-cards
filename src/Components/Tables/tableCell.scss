@@ -1,0 +1,15 @@
+.c-table-cell {
+  padding: 0 20px;
+
+  &--stretch {
+    width: 100%;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--borderRight {
+    border-right: 1px solid grey;
+  }
+}
