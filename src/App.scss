@@ -1,16 +1,15 @@
 .c-app {
   &__total-credit-btn {
-    width: 200px;
     height: auto;
-    background-color: #f4ee21;
+    background-color: #F78105;;
     border-radius: 20px;
     padding: 11px 20px;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     border: 0;
-    box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 47px 0 rgba(0, 0, 0, 0.75);
     margin: 20px;
-    color: #160e57;
+    color: white;
   }
 }

@@ -110,7 +110,7 @@ const UserInputForm = ({ submitData }: Props) => {
       </div>
 
       <InputBox
-        label="earnings"
+        label="Earnings (Mandatory)"
         onChange={handleChange}
         value={state.earnings}
         placeholder=""
@@ -122,11 +122,10 @@ const UserInputForm = ({ submitData }: Props) => {
       />
       <div className={bem(baseClass, "section-three")}>
         <label style={{ fontSize: "18px", fontFamily: "Arial" }}>
-          Employment status
+          Employment status (Mandatory
         </label>
         <Select
           styles={customStyles}
-          label="Employment status"
           placeholder=""
           onChange={(selectedOption) => onChangeSelect(selectedOption)}
           options={employmentSelectOptions}

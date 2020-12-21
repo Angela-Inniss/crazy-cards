@@ -36,53 +36,55 @@ const CreditCard = ({
   const baseClass = "c-credit-card";
   const [seeCardDetails, setSeeCardDetails] = useState(false);
   return (
-    <div className={baseClass}>
-      <span
-        style={{
-          fontWeight: "bold",
-          fontSize: "20px",
-          margin: "30px",
-        }}
-      >
-        {name} Credit Card is available to you - Guaranteed {apr} APR
-      </span>
-      <div className={bem(baseClass, "container")}>
-        <div
-          onClick={onClickCard}
-          className={bem(baseClass, selected ? "card-selected" : "card")}
+    <>
+      <div className={baseClass}>
+        <span
+          style={{
+            fontWeight: "bold",
+            fontSize: "20px",
+            margin: "30px",
+          }}
         >
-          <div>
-            <ChipIcon />
-          </div>
-
-          <div className={bem(baseClass, "number")}>{number}</div>
-          <div className={bem(baseClass, "name-expiry-block")}>
-            <span className={bem(baseClass, "name")}>{name}</span>
-
-            <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
-          </div>
-        </div>
-
-        <div style={{ margin: "auto" }}>
-          {seeCardDetails && (
-            <CreditCardDetailsTable
-              apr={apr}
-              balanceTransferDuration={balanceTransferDuration}
-              purchaseDuration={purchaseOfferDuration}
-              creditAvailable={creditAvailable}
-            />
-          )}
-        </div>
-        <div style={{ margin: "auto" }}>
-          <button
-            className={bem(baseClass, "see-details-btn")}
-            onClick={() => setSeeCardDetails(!seeCardDetails)}
+          {name} - Guaranteed {apr} APR
+        </span>
+        <div className={bem(baseClass, "container")}>
+          select card to be able to see credit available
+          <div
+            onClick={onClickCard}
+            className={bem(baseClass, selected ? "card-selected" : "card")}
           >
-            See card details
-          </button>
+            <div>
+              <ChipIcon />
+            </div>
+
+            <div className={bem(baseClass, "number")}>{number}</div>
+            <div className={bem(baseClass, "name-expiry-block")}>
+              <span className={bem(baseClass, "name")}>{name}</span>
+
+              <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
+            </div>
+          </div>
+          <div style={{ margin: "auto" }}>
+            {seeCardDetails && (
+              <CreditCardDetailsTable
+                apr={apr}
+                balanceTransferDuration={balanceTransferDuration}
+                purchaseDuration={purchaseOfferDuration}
+                creditAvailable={creditAvailable}
+              />
+            )}
+          </div>
+          <div style={{ margin: "auto" }}>
+            <button
+              className={bem(baseClass, "see-details-btn")}
+              onClick={() => setSeeCardDetails(!seeCardDetails)}
+            >
+              See card details
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
