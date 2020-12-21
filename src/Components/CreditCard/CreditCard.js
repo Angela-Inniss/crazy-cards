@@ -5,6 +5,7 @@ import "react-credit-cards/lib/styles.scss";
 import { ReactComponent as ChipIcon } from "../../Icons/chip.svg";
 
 import "./creditcard.scss";
+
 import CreditCardDetailsTable from "./CreditCardDetailsTable";
 
 type Props = {
