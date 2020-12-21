@@ -48,7 +48,6 @@ const CreditCard = ({
           {name} - Guaranteed {apr} APR
         </span>
         <div className={bem(baseClass, "container")}>
-          select card to be able to see credit available
           <div
             onClick={onClickCard}
             className={bem(baseClass, selected ? "card-selected" : "card")}

@@ -95,7 +95,6 @@ const UserInputForm = ({ submitData }: Props) => {
           error={error.ageError}
           className={bem(baseClass, "age")}
         />
-        {state.age}
         <InputBox
           label="PostCode"
           onChange={handleChange}

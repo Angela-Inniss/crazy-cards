@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import bem from "./bem";
 import UserInputForm from "./Forms/UserInputForm";
 import CreditCard from "./Components/CreditCard/CreditCard";
-import "./App.scss";
 import { allCards } from "./cardData";
+
+import "./App.scss";
 
 const Container = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
 
-  // function to select  card
   const handleSelectCard = (id) => {
     if (selectedCards.includes(id)) {
       const filteredIds = selectedCards.filter((c) => c !== id);
@@ -17,32 +17,22 @@ const Container = () => {
     } else {
       setSelectedCards([...selectedCards, id]);
     }
-    console.log("inside selected card");
-    return selectedCards; // changed this to a return
+    return selectedCards;
   };
-  // end of function 1
 
-  //  function to add up credit
   const addUpCreditAvailable = (selectedCards) => {
-    console.log(selectedCards);
-    console.log("inside add up credit");
     const chosenCards = selectedCards.map((id) => {
       const foundCard = allCards.find((card) => {
         return card.id === id;
       });
-      return foundCard; // this is an array of card objects now [{},{}]
+      return foundCard;
     });
+
     const result = chosenCards.reduce((acc, card) => {
       return acc + card.creditAvailable;
     }, 0);
-
-    console.log(result);
     return result;
   };
-
-  // end of function 2
-
-  console.log(selectedCards);
 
   const totalCredit = addUpCreditAvailable(selectedCards);
 
@@ -72,7 +62,15 @@ const Container = () => {
   return (
     <div className="Container">
       <UserInputForm submitData={handleSubmitData} />
-      <h1> Cards available to you displayed are below!</h1>
+      {cards.length && (
+        <div className={bem(baseClass, "heading")}>
+          <h1>Cards available to you displayed are below!</h1>
+          <h3 className={bem(baseClass, "sub-heading")}>
+            Select a card to see credit available
+          </h3>
+        </div>
+      )}
+
       {cards.map(
         ({
           id,
@@ -98,7 +96,11 @@ const Container = () => {
           />
         )
       )}
-      {totalCredit}
+      {selectedCards.length && (
+        <div className={bem(baseClass, "total-credit")}>
+          {/*Total Credit available: £{totalCredit}*/}
+        </div>
+      )}
     </div>
   );
 };

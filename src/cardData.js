@@ -1,7 +1,7 @@
 export const allCards = [
   {
     id: 1,
-    name: "studentCard",
+    name: "StudentCard",
     number: "1234567789019283",
     apr: "8.9%",
     balanceTransfer: "0 months",
@@ -11,7 +11,7 @@ export const allCards = [
   },
   {
     id: 2,
-    name: "liquidCard",
+    name: "LiquidCard",
     number: "12345677803928617",
     apr: "8.9%",
     balanceTransfer: "0 months",
@@ -21,7 +21,7 @@ export const allCards = [
   },
   {
     id: 3,
-    name: "anywhereCard",
+    name: "AnywhereCard",
     number: "1234568938263943",
     apr: "8.9%",
     balanceTransfer: "0 months",

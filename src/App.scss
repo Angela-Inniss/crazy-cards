@@ -1,15 +1,21 @@
 .c-app {
-  &__total-credit-btn {
-    height: auto;
-    background-color: #F78105;;
-    border-radius: 20px;
-    padding: 11px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    border: 0;
-    box-shadow: 10px 10px 47px 0 rgba(0, 0, 0, 0.75);
+  &__total-credit {
+    display: flex;
+    justify-content: center;
     margin: 20px;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 0 #77bfa3;
+    background-color: #160e57;
     color: white;
+    font-weight: bold;
+  }
+  &__sub-heading {
+    color: #160e57;
+    text-shadow: 0 2px 0 #77bfa3;
+  }
+  &__heading {
+    margin: 20px;
   }
 }
