@@ -3,9 +3,9 @@
 import React from "react";
 
 import bem from "../../bem";
-import "./card.scss";
+import "./panel.scss";
 type Props = {
-    type: "small" | "medium" | "large" | "with-image" | "modal",
+    type: "small" | "medium" | "large" | "modal",
     children: Node,
 };
 

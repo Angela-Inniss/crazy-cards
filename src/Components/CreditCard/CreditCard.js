@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import bem from "../../bem";
-import Cards from "react-credit-cards";
+
 import "react-credit-cards/lib/styles.scss";
+
 import { ReactComponent as ChipIcon } from "../../Icons/chip.svg";
 
 import "./creditcard.scss";
@@ -36,6 +37,15 @@ const CreditCard = ({
   const [seeCardDetails, setSeeCardDetails] = useState(false);
   return (
     <div className={baseClass}>
+      <span
+        style={{
+          fontWeight: "bold",
+          fontSize: "20px",
+          margin: "30px",
+        }}
+      >
+        {name} Credit Card is available to you - Guaranteed {apr} APR
+      </span>
       <div className={bem(baseClass, "container")}>
         <div
           onClick={onClickCard}
@@ -52,14 +62,6 @@ const CreditCard = ({
             <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
           </div>
         </div>
-        <div style={{ margin: "auto" }}>
-          <button
-            className={bem(baseClass, "see-details-btn")}
-            onClick={() => setSeeCardDetails(!seeCardDetails)}
-          >
-            See card details
-          </button>
-        </div>
 
         <div style={{ margin: "auto" }}>
           {seeCardDetails && (
@@ -70,6 +72,14 @@ const CreditCard = ({
               creditAvailable={creditAvailable}
             />
           )}
+        </div>
+        <div style={{ margin: "auto" }}>
+          <button
+            className={bem(baseClass, "see-details-btn")}
+            onClick={() => setSeeCardDetails(!seeCardDetails)}
+          >
+            See card details
+          </button>
         </div>
       </div>
     </div>
