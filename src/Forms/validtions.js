@@ -18,7 +18,8 @@ export const callValidations = (state, error, setError) => {
       employmentStatusError: "please select employment status",
     });
   }
-  if (!state.earnings.trim().length) {
+  if (!state.earnings) {
     setError({ ...error, earningsError: "please enter earnings" });
+    return;
   }
 };

@@ -4,7 +4,6 @@
     display: flex;
   }
   &__section-three {
-    border: 2px solid yellow;
     display: inline-block;
     margin-left: 20px;
     min-width: 214px;
@@ -19,6 +18,12 @@
   &__earnings {
     display: inline-block;
     margin: 20px;
+  }
+
+  &__employment-label {
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: bold;
   }
   &__submit-btn {
     width: 200px;

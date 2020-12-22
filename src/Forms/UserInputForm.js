@@ -42,21 +42,29 @@ const UserInputForm = ({ submitData }: Props) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    callValidations(state, error, setError);
+
+    const validate = callValidations(state, error, setError);
+    if (validate) {
+      console.log("there's an error dont submit");
+    } else {
+      console.log("no error");
+    }
+
     submitData({ state }); //  submitData is a prop that will be used when this component is passed up to its container component it will be used then and teh logic will be executed there? // it passes up the data we are submitting
     setState({
       firstName: "",
       surName: "",
       age: "",
       postcode: "",
-      employmentStatus: "",
       earnings: 0,
+      value: { label: "", value: "" },
     });
+    console.log({ state });
   };
   const baseClass = "c-user-input-form";
 
   return (
-    <form className={bem(baseClass)} htmlForm onSubmit={handleOnSubmit}>
+    <form className={bem(baseClass)} htmlform="true" onSubmit={handleOnSubmit}>
       <div className={bem(baseClass, "name-fields")}>
         <InputBox
           label="FirstName"
@@ -82,7 +90,6 @@ const UserInputForm = ({ submitData }: Props) => {
           className={bem(baseClass, "surName")}
         />
       </div>
-
       <div className={bem(baseClass, "box-two")}>
         <InputBox
           label="Age"
@@ -107,7 +114,6 @@ const UserInputForm = ({ submitData }: Props) => {
           className={bem(baseClass, "postcode")}
         />
       </div>
-
       <InputBox
         label="Earnings (Mandatory)"
         onChange={handleChange}
@@ -120,15 +126,16 @@ const UserInputForm = ({ submitData }: Props) => {
         className={bem(baseClass, "earnings")}
       />
       <div className={bem(baseClass, "section-three")}>
-        <label style={{ fontSize: "18px", fontFamily: "Arial" }}>
-          Employment status (Mandatory
+        <label className={bem(baseClass, "employment-label")}>
+          Employment status (Mandatory)
         </label>
         <Select
           styles={customStyles}
-          placeholder=""
+          placeholder="Please select an option..."
           onChange={(selectedOption) => onChangeSelect(selectedOption)}
           options={employmentSelectOptions}
           error={error.employmentStatusError}
+          value={state.value}
         />
       </div>
 

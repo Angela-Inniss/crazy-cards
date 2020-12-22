@@ -37,22 +37,23 @@ const Container = () => {
   const totalCredit = addUpCreditAvailable(selectedCards);
 
   const handleSubmitData = (userInput) => {
+    console.log(userInput);
     const { employmentStatus } = userInput.state;
     const { earnings } = userInput.state;
 
     let filtered = [...allCards];
 
     if (employmentStatus === "student" && earnings < 16000) {
-      filtered = allCards.filter((card) => card.name !== "liquidCard");
+      filtered = allCards.filter((card) => card.name !== "LiquidCard");
     }
     if (employmentStatus === "student" && earnings >= 16000) {
       filtered = allCards;
     }
     if (employmentStatus !== "student" && earnings < 16000) {
-      filtered = allCards.filter((card) => card.name === "anywhereCard");
+      filtered = allCards.filter((card) => card.name === "AnywhereCard");
     }
     if (employmentStatus !== "student" && earnings >= 16000) {
-      filtered = allCards.filter((card) => card.name !== "studentCard");
+      filtered = allCards.filter((card) => card.name !== "StudentCard");
     }
 
     setCards(filtered);
@@ -64,9 +65,9 @@ const Container = () => {
       <UserInputForm submitData={handleSubmitData} />
       {cards.length && (
         <div className={bem(baseClass, "heading")}>
-          <h1>Cards available to you displayed are below!</h1>
+          <h1>Cards available to you displayed are below:</h1>
           <h3 className={bem(baseClass, "sub-heading")}>
-            Select a card to see credit available
+            Click on the card to see the credit available to you
           </h3>
         </div>
       )}
@@ -98,7 +99,7 @@ const Container = () => {
       )}
       {selectedCards.length && (
         <div className={bem(baseClass, "total-credit")}>
-          {/*Total Credit available: £{totalCredit}*/}
+          Total Credit available: £{totalCredit}
         </div>
       )}
     </div>
