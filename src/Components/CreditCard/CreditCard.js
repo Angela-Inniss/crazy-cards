@@ -63,7 +63,7 @@ const CreditCard = ({
               <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
             </div>
           </div>
-          <div style={{ margin: "auto" }}>
+          <div>
             {seeCardDetails && (
               <CreditCardDetailsTable
                 apr={apr}
@@ -73,7 +73,7 @@ const CreditCard = ({
               />
             )}
           </div>
-          <div style={{ margin: "auto" }}>
+          <div>
             <button
               className={bem(baseClass, "see-details-btn")}
               onClick={() => setSeeCardDetails(!seeCardDetails)}

@@ -44,12 +44,12 @@ const UserInputForm = ({ submitData }: Props) => {
     event.preventDefault();
 
     const validate = callValidations(state, error, setError);
+    console.log(validate);
     if (validate) {
       console.log("there's an error dont submit");
     } else {
       console.log("no error");
     }
-
     submitData({ state }); //  submitData is a prop that will be used when this component is passed up to its container component it will be used then and teh logic will be executed there? // it passes up the data we are submitting
     setState({
       firstName: "",
@@ -57,7 +57,7 @@ const UserInputForm = ({ submitData }: Props) => {
       age: "",
       postcode: "",
       earnings: 0,
-      value: { label: "", value: "" },
+      value: { label: "", value: "" }, // the react select initial value is a label value pair
     });
     console.log({ state });
   };
@@ -65,6 +65,7 @@ const UserInputForm = ({ submitData }: Props) => {
 
   return (
     <form className={bem(baseClass)} htmlform="true" onSubmit={handleOnSubmit}>
+      Please fill in details below to check your eligibility
       <div className={bem(baseClass, "name-fields")}>
         <InputBox
           label="FirstName"
@@ -77,7 +78,6 @@ const UserInputForm = ({ submitData }: Props) => {
           error={error.firstNameError}
           className={bem(baseClass, "firstName")}
         />
-
         <InputBox
           label="Surname"
           onChange={handleChange}
@@ -138,7 +138,6 @@ const UserInputForm = ({ submitData }: Props) => {
           value={state.value}
         />
       </div>
-
       <button className={bem(baseClass, "submit-btn")}>Submit data</button>
     </form>
   );

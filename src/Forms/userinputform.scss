@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .c-user-input-form {
   &__name-fields,
   &__box-two {
@@ -22,8 +26,9 @@
 
   &__employment-label {
     font-size: 16px;
-    font-family: Arial;
     font-weight: bold;
+    display: inline-block;
+    margin-bottom: 9px;
   }
   &__submit-btn {
     width: 200px;
