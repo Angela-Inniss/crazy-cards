@@ -1,16 +1,14 @@
 .c-credit-card {
-  &__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: white;
-    position: relative;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    padding: 30px;
-    margin: 30px;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 30px;
+  padding: 40px;
 
   &__card {
     border-radius: 10px;
@@ -38,6 +36,10 @@
     height: 30px;
   }
 
+  &__card-info {
+    flex: 1;
+  }
+
   &__see-details-btn {
     height: auto;
     background-color: #77bfa3;
@@ -47,7 +49,7 @@
     font-weight: 700;
     cursor: pointer;
     border: 0;
-    box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 47px 0 rgba(0, 0, 0, 0.75);
     margin: 20px;
     color: #160e57;
     outline: 0;
@@ -73,5 +75,15 @@
 
   &__expiry {
     font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1561px) {
+  .c-credit-card {
+    flex-direction: column;
+    &__card {
+      margin-bottom: 20px;
+      margin: auto;
+    }
   }
 }

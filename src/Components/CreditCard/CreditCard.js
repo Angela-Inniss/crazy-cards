@@ -38,16 +38,27 @@ const CreditCard = ({
   return (
     <>
       <div className={baseClass}>
-        <span
-          style={{
-            fontWeight: "bold",
-            fontSize: "20px",
-            margin: "30px",
-          }}
-        >
-          {name} - Guaranteed {apr} APR
-        </span>
-        <div className={bem(baseClass, "container")}>
+        <div className={bem(baseClass, "card-info")}>
+          <span
+            style={{
+              color: "#04AEB5",
+              fontSize: "18px",
+              marginBottom: "20px",
+              fontWeight: "bold",
+            }}
+          >
+            GUARANTEED APR{" "}
+          </span>{" "}
+          | You are guaranteed to get the APR shown if you're accepted
+          <div
+            style={{
+              fontWeight: "bold",
+              fontSize: "20px",
+              marginBottom: "20px",
+            }}
+          >
+            {name} - Guaranteed {apr} APR
+          </div>
           <div
             onClick={onClickCard}
             className={bem(baseClass, selected ? "card-selected" : "card")}
@@ -63,24 +74,24 @@ const CreditCard = ({
               <span className={bem(baseClass, "expiry")}> exp:{expiry}</span>
             </div>
           </div>
-          <div>
-            {seeCardDetails && (
-              <CreditCardDetailsTable
-                apr={apr}
-                balanceTransferDuration={balanceTransferDuration}
-                purchaseDuration={purchaseOfferDuration}
-                creditAvailable={creditAvailable}
-              />
-            )}
-          </div>
-          <div>
-            <button
-              className={bem(baseClass, "see-details-btn")}
-              onClick={() => setSeeCardDetails(!seeCardDetails)}
-            >
-              See card details
-            </button>
-          </div>
+        </div>
+        <div>
+          {seeCardDetails && (
+            <CreditCardDetailsTable
+              apr={apr}
+              balanceTransferDuration={balanceTransferDuration}
+              purchaseDuration={purchaseOfferDuration}
+              creditAvailable={creditAvailable}
+            />
+          )}
+        </div>
+        <div>
+          <button
+            className={bem(baseClass, "see-details-btn")}
+            onClick={() => setSeeCardDetails(!seeCardDetails)}
+          >
+            See card details
+          </button>
         </div>
       </div>
     </>

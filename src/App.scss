@@ -1,4 +1,7 @@
-.c-app {
+.c-container {
+  padding: 100px;
+  background: lightgrey;
+
   &__total-credit {
     display: flex;
     justify-content: center;
@@ -11,11 +14,17 @@
     color: white;
     font-weight: bold;
   }
+
+  &__heading {
+    text-align: center;
+  }
+
   &__sub-heading {
     color: #160e57;
     text-shadow: 0 2px 0 #77bfa3;
   }
-  &__heading {
+
+  &__sub-subheading {
     margin: 20px;
   }
 }
