@@ -1,10 +1,9 @@
 export const callValidations = (state, error, setError) => {
-  let formIsValid = true; //crete a variable so you ave something to assign and return at the end of the function
+  let formIsValid = true;
   console.log("check validating");
   if (!state.firstName.trim().length) {
     formIsValid = false;
     setError({ ...error, firstNameError: "please enter first name" });
-    // spreading the error object so we dont mutate original state and then update the firstNameError key with the error msg
   }
   if (!state.surName.trim().length) {
     formIsValid = false;
@@ -29,5 +28,5 @@ export const callValidations = (state, error, setError) => {
     formIsValid = false;
     setError({ ...error, earningsError: "please enter earnings" });
   }
-  return formIsValid; // return something from teh function
+  return formIsValid;
 };

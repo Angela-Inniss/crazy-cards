@@ -1,14 +1,15 @@
-
 .c-user-input-form {
   &__name-fields,
   &__box-two {
     display: flex;
   }
+
   &__section-three {
     display: inline-block;
     margin-left: 20px;
     min-width: 214px;
   }
+
   &__firstName,
   &__surName,
   &__age,
@@ -27,6 +28,7 @@
     display: inline-block;
     margin-bottom: 9px;
   }
+
   &__submit-btn {
     width: 200px;
     height: auto;
@@ -37,10 +39,11 @@
     font-weight: 700;
     cursor: pointer;
     border: 0;
-    box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 47px 0 rgba(0, 0, 0, 0.75);
     margin: 20px;
     color: #160e57;
   }
+
   margin: 4rem auto;
   padding: 2rem 3rem 3rem;
   max-width: 600px;

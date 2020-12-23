@@ -2,7 +2,6 @@
 import React from "react";
 import type { Element } from "react";
 
-//
 import TableBody from "./TableBody";
 
 type Props = {

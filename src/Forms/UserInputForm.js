@@ -36,31 +36,27 @@ const UserInputForm = ({ submitData }: Props) => {
   };
 
   const onChangeSelect = (selectedOption) => {
-    const { value } = selectedOption; // this is an object of key value pairs
+    const { value } = selectedOption;
     setState({ ...state, employmentStatus: value });
   };
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
 
-    const validate = callValidations(state, error, setError); // when u call a function store it so u can use the result
-    console.log(validate);
-    if (!validate) {
-      console.log("there's an error dont submit"); // print this to the screen, add an error prop to page
+    const validated = callValidations(state, error, setError);
+    if (!validated) {
       return;
     } else {
-      console.log("no error");
+      submitData({ state });
+      setState({
+        firstName: "",
+        surName: "",
+        age: "",
+        postcode: "",
+        earnings: 0,
+        value: { label: "", value: "" },
+      });
     }
-    submitData({ state }); //  submitData is a prop that will be used when this component is passed up to its container component. The logic will be executed there // it passes up the data we are submitting
-    setState({
-      firstName: "",
-      surName: "",
-      age: "",
-      postcode: "",
-      earnings: 0,
-      value: { label: "", value: "" }, // the react select initial value is a label value pair
-    });
-    console.log({ state });
   };
   const baseClass = "c-user-input-form";
 

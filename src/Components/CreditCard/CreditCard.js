@@ -99,9 +99,3 @@ const CreditCard = ({
 };
 
 export default CreditCard;
-
-// Notes:
-// need to add onclick to this card, and when the user clicks it need to display the details of the card
-// could first of all hide the rest of the info on the card and only when the user clicks we display all the details
-// selected should be "card.name"
-// handling toggle see more state internally as it is specific to this component.

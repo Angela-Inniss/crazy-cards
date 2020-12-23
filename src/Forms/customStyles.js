@@ -1,5 +1,4 @@
 const fontFamily = "monospace";
-const fontSize = 18;
 
 export const customStyles = {
   option: (provided, state) => ({
@@ -11,7 +10,6 @@ export const customStyles = {
   }),
   control: (provided, state) => ({
     ...provided,
-    // none of react-select's styles are passed to <Control />
     color: state.isSelected ? "deeppink" : "mediumslateblue",
   }),
   dropdownIndicator: (provided, state) => ({
