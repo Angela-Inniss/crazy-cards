@@ -43,14 +43,15 @@ const UserInputForm = ({ submitData }: Props) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
 
-    const validate = callValidations(state, error, setError);
+    const validate = callValidations(state, error, setError); // when u call a function store it so u can use the result
     console.log(validate);
-    if (validate) {
-      console.log("there's an error dont submit");
+    if (!validate) {
+      console.log("there's an error dont submit"); // print this to the screen, add an error prop to page
+      return;
     } else {
       console.log("no error");
     }
-    submitData({ state }); //  submitData is a prop that will be used when this component is passed up to its container component it will be used then and teh logic will be executed there? // it passes up the data we are submitting
+    submitData({ state }); //  submitData is a prop that will be used when this component is passed up to its container component. The logic will be executed there // it passes up the data we are submitting
     setState({
       firstName: "",
       surName: "",
