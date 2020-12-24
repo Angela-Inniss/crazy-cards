@@ -45,6 +45,7 @@ const UserInputForm = ({ submitData }: Props) => {
 
     const validated = callValidations(state, error, setError);
     if (!validated) {
+      console.log("error");
       return;
     } else {
       submitData({ state });
