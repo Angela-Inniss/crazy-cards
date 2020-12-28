@@ -66,7 +66,7 @@ const UserInputForm = ({ submitData }: Props) => {
       Please fill in details below to check your eligibility
       <div className={bem(baseClass, "name-fields")}>
         <InputBox
-          label="FirstNamee"
+          label="FirstName"
           onChange={handleChange}
           value={state.firstName}
           placeholder=""
