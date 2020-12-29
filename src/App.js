@@ -37,7 +37,6 @@ const Container = () => {
   const totalCredit = addUpCreditAvailable(selectedCards);
 
   const handleSubmitData = (userInput) => {
-    console.log(userInput);
     const { employmentStatus } = userInput.state;
     const { earnings } = userInput.state;
 
@@ -99,13 +98,11 @@ const Container = () => {
           />
         )
       )}
-      {Boolean(
-        selectedCards.length && (
-          <div className={bem(baseClass, "total-credit")}>
-            Total Credit available: £{totalCredit}
-          </div>
-        )
-      )}
+      {selectedCards.length ? (
+        <div className={bem(baseClass, "total-credit")}>
+          Total Credit available: £{totalCredit}
+        </div>
+      ) : null}
     </div>
   );
 };
