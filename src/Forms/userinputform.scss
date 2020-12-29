@@ -52,4 +52,15 @@
   box-shadow: -20px -20px 0px 0px #77bfa3;
   overflow: hidden;
   border-radius: 4px;
+
+  @media screen and (max-width: 1561px) {
+      padding: 10px;
+      &__name-fields,
+      &__box-two {
+        display: block;
+      }
+
+  }
 }
+
+
