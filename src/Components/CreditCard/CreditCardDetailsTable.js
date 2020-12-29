@@ -37,7 +37,7 @@ const CreditCardDetailsTable = ({
               <h3>{purchaseDuration}</h3>
             </TableCell>
             <TableCell>
-              <span>creditAvailable</span>
+              <span>Credit Available</span>
               <h3>£{creditAvailable}</h3>
             </TableCell>
           </TableRow>
