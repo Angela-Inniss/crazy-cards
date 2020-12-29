@@ -64,13 +64,15 @@ const Container = () => {
     <div className={baseClass}>
       <h1 className={bem(baseClass, "heading")}>Welcome to Crazy Cards</h1>
       <UserInputForm submitData={handleSubmitData} />
-      {cards.length && (
-        <div className={bem(baseClass, "sub-heading")}>
-          <h1>Cards available to you displayed are below:</h1>
-          <h3 className={bem(baseClass, "sub-sub-heading")}>
-            Click on the card to see the credit available to you
-          </h3>
-        </div>
+      {Boolean(
+        cards.length && (
+          <div className={bem(baseClass, "sub-heading")}>
+            <h1>Cards available to you displayed are below:</h1>
+            <h3 className={bem(baseClass, "sub-sub-heading")}>
+              Click on the card to see the credit available to you
+            </h3>
+          </div>
+        )
       )}
       {cards.map(
         ({
@@ -97,10 +99,12 @@ const Container = () => {
           />
         )
       )}
-      {selectedCards.length && (
-        <div className={bem(baseClass, "total-credit")}>
-          Total Credit available: £{totalCredit}
-        </div>
+      {Boolean(
+        selectedCards.length && (
+          <div className={bem(baseClass, "total-credit")}>
+            Total Credit available: £{totalCredit}
+          </div>
+        )
       )}
     </div>
   );
