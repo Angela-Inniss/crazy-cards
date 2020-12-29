@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import bem from "../../bem";
 
-import "react-credit-cards/lib/styles.scss";
-
 import { ReactComponent as ChipIcon } from "../../Icons/chip.svg";
 
 import "./creditcard.scss";
